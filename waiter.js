@@ -1,5 +1,4 @@
 /* Waiter by Marcello Bastea-Forte - zlib license */
-
 module.exports = function() {
     var unfinishedResults = [],
         finalCallback,
@@ -18,9 +17,10 @@ module.exports = function() {
     }
 
     function waiter(callback) {
-        var result = {}
+        if (finalCallback) throw new Error("Cannot create a waiter after waitForAll has been called")
+        var result = function(error, value) { resultFinished(result, error, value) }
         unfinishedResults.push(result)
-        callback(function(error, value) { resultFinished(result, error, value) })
+        callback && callback(result)
         return result
     }
     waiter.waitForAll = function(callback, timeout) {

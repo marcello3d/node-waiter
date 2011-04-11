@@ -1,7 +1,7 @@
 {
   "name": "waiter",
-  "description": "Waiter is an extremely simple way to handle parallel asynchronous calls",
-  "version": "0.1.0",
+  "description": "A simple way to wait for multiple asynchronous calls to return",
+  "version": "0.1.1",
   "homepage": "https://github.com/marcello3d/node-waiter",
   "repository": "git://github.com/marcello3d/node-waiter.git",
   "author": "Marcello Bastéa-Forte <marcello@cellosoft.com> (http://marcello.cellosoft.com/)",
